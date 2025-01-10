@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>subko</title>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+</head>
+<style>
+    * {
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+    }
+
+    .subko {
+        background-image: url("/bannerimage.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        max-width: 100%;
+        height: 500vh;
+    }
+
+
+    .behnodubkosec2 {
+        height: 100vh;
+        display: grid;
+        place-content: center;
+    }
+
+    .behnodubkosec3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    @media screen and (max-width:400px) {
+        .subko {
+            background-image: url("mobilebg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+    }
+
+    @media screen and (max-width:500px) {
+        .bhenotext {
+            max-width: 244px;
+            width: 100%;
+        }
+
+        #stuck {
+            max-width: 113px;
+        }
+
+        #behnostuck {
+            max-width: 66px;
+        }
+
+        #stick {
+            max-width: 35px;
+        }
+
+        #stick {
+            transform: translateX(-15px);
+        }
+
+        .blogo {
+            max-width: 84px;
+        }
+
+        .infotext {
+            font-size: 13px;
+        }
+    }
+</style>
+
+<body>
+    <section style="position: sticky; top: 0;" class="subko">
+
+        <div class="behnodubkosec2">
+            <img id="stuck1" src="./takatlogo.png" alt="takatlogo.png">
+        </div>
+        <div class="behnodubkosec3">
+            <img id="behnostuck" style="margin: 0 auto;" src="./takatlogo2.png" alt="takatlogo2">
+        </div>
+        <div style="height: 100vh;" class="behnodubkosec4">
+            <p class="text"
+                style="max-width: 468px; margin: 0 auto; color: white; text-align: center; line-height: 125%;">TĀKAT by
+                behno New York is more than a collection—it’s a celebration of the artisans whose passion and skill
+                breathe life into every piece. Each piece carries the soul of timeless artistry and the promise of
+                making luxury truly meaningful.</p>
+        </div>
+        <div class="sec4"
+            style="display: flex; width: 100%; margin: 0 auto; justify-content: center; height: 100vh; align-items: center;">
+            <img class="behnoyork" src="/behnoyork.png" style="max-width: 130px;" alt="">
+        </div>
+        <div class="sec5" style="height: 100vh;">
+        </div>
+        <!-- <div class="sec5" style="display: grid; grid-template-columns: 50% 50%; width: 100%;">
+                <div style="width: 50%;"></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; width: 100%;">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+                    <img style="width: 100%;" src="/productimage1.png" alt="">
+               </div>
+            </div> -->
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+
+
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 500px)", () => {
+
+            // gsap.timeline({
+            //     scrollTrigger: {
+            //         trigger: ".subko",
+            //         start: "20% 20%",
+            //         end: "bottom 0%",
+            //         scrub: true,
+            //         pin: true,
+            //         pinSpacing:false,
+            //         markers: true,
+            //     }
+            // })
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec2",
+                    start: "50% 25%",
+                    end: "bottom 0%",
+                    // markers: true,
+                    scrub: true,
+                }
+            }).to("#stuck1", {
+                x: -200,
+            })
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec2",
+                    start: "0% 0%",
+                    end: "bottom -300%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                    // markers: true,
+                }
+            })
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec3",
+                    start: "0% 50%",
+                    end: "50% 0%",
+                    scrub: true,
+                    // markers: true,
+                }
+            }).to("#behnostuck", {
+                x: 100,
+            })
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec3",
+                    start: "0% 0%",
+                    end: "100% 40%",
+                    // markers: true,
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false
+                }
+            },)
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec4",
+                    start: "0% 70%",
+                    end: "70% 70%",
+                    // markers: true,
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false
+                }
+            },).to(".text", {
+                opacity: 0
+            })
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".sec4",
+                    start: "-25% 100%",
+                    end: "25% 100%",
+                    // markers: true,
+                    scrub: true,
+                }
+            }).to("#stuck1", {
+                x: 0,
+            })
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".sec4",
+                    start: "42% 60%",
+                    end: "100% 0%",
+                    // markers: true,
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                }
+            })
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".sec5",
+                    start: "0% 100%",
+                    end: "0% 0%",
+                    markers: true,
+                    scrub: true,
+                }
+            }).to("#stuck1", {
+                x: '-500px'
+
+            }, "b").to(".behnoyork", {
+                x: "-500px"
+            }, "b")
+
+        })
+        // gsap.timeline({
+        //         scrollTrigger: {
+        //             trigger: ".subkomain",
+        //             start: "100% 100%",
+        //             end: "100% 0%",
+        //             pin: true,
+        //             pinSpacing: false,
+        //             scrub: true,
+        //         }
+        //     })
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+    <script>
+        const lenis = new Lenis({
+            duration: 3,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        })
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,861 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Behno</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* section 1 css */
+
+    .imagebox {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .bgimageone {
+      background-image: url('./images/bgimage1.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .bgimagetwo {
+      background-image: url('./images/bgimage2.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .logobox {
+      height: 100vh;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .textbox {
+      height: 100vh;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .textbox p {
+      font-family: Adobe Caslon Pro;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 15.6px;
+      letter-spacing: 0.02em;
+      text-align: center;
+      color: #fff;
+    }
+
+    .section {
+      overflow: hidden;
+    }
+
+    /* section 1 css */
+
+    /* section 2 ============================================= */
+
+
+    .heading-text,
+    .heading-text2 {
+      font-weight: 400;
+      font-size: 57px;
+      line-height: 52px;
+      color: white;
+      text-wrap: nowrap;
+      padding-top: 30%;
+    }
+
+    /* 
+    .left {
+      height: 100vh;
+      width: 100%;
+      background: url("./images/bggirl1.jpg");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+    } */
+
+    .rightside {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* width: 100%; */
+      /* backdrop-filter: blur(100px); */
+      /* position: relative;
+      z-index: 4; */
+      /* background-image: linear-gradient(rgb(240 241 244), rgb(240 241 244)); */
+      background-color: #F0F1F4;
+      /* backdrop-filter: blur(100px); */
+    }
+
+    .rightside img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .left,
+    .secleft {
+      position: relative;
+    }
+
+    .heading-text-bottom,
+    .heading-text-bottom2 {
+      color: white;
+      font-family: Helvetica Neue;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 13.64px;
+      letter-spacing: 0.11em;
+      text-align: center;
+      text-wrap: nowrap;
+    }
+
+    /* section 3 ============================================= */
+
+    .video {
+      margin-bottom: -4px;
+    }
+
+    .videoHeading {
+      background-color: #fff;
+      text-align: center;
+      padding: 16px 0;
+      font-family: PP Editorial New;
+      font-size: 35px;
+      font-style: italic;
+      font-weight: 200;
+      line-height: 50.05px;
+      text-align: center;
+      color: #581a1a;
+    }
+
+    /* section 4 ============================================= */
+
+    .section4inner {
+      position: relative;
+    }
+
+    .section4left {
+      width: 100%;
+    }
+
+    .imgsec2 {
+      height: 100vh;
+      width: 100%;
+      background: url("./images/bggirl1.jpg");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .imgsec4 {
+      height: 100vh;
+      width: 100%;
+      max-width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top;
+      background-image: url("./images/section3.png");
+    }
+
+
+
+    /* end */
+
+    /* section 5 ============================================= */
+
+    .footer {
+      position: relative;
+    }
+
+    .maisonsec {
+      background-image: url("./images/maison.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+    }
+
+    .cantant {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      gap: 87px;
+      text-align: center;
+    }
+
+    #text-anim {
+      font-family: PP Editorial New;
+      font-size: 31px;
+      font-style: italic;
+      font-weight: 200;
+      line-height: 44.33px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .btn {
+      padding: 7px 25px 7px 25px;
+      background-color: #ffffff;
+      font-family: Adobe Caslon Pro;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22.8px;
+      letter-spacing: 0.02em;
+      text-align: left;
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .staggerEffect {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+
+    /* end */
+    .bannerbg {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .gridd {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      width: 100%;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-textcontainer div {
+      display: inline-block;
+    }
+
+
+    .scrollingtext2 {
+      display: block;
+    }
+
+    .scrollingtext,
+    .scrollingtext2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      width: 50%;
+      height: 100vh;
+      margin: 0 auto;
+    }
+
+    .scrollingtext {
+      display: flex;
+    }
+
+    .power {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .scrollingtext-res-section2 {
+      display: none;
+    }
+
+    .heading-text2-res {
+      display: none;
+    }
+
+
+    @media only screen and (max-width: 1150px) {
+
+      .heading-text,
+      .heading-text2 {
+        font-size: 34px;
+        line-height: 60px;
+      }
+
+      .heading-text-bottom,
+      .heading-text-bottom2 {
+        font-size: 14px;
+      }
+
+
+    }
+
+    @media only screen and (max-width: 1024px) {
+
+      .heading-text,
+      .heading-text-bottom,
+      .heading-text2,
+      .heading-text-bottom2 {
+        text-align: center;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .section4left {
+        width: 100%;
+        max-width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+      }
+
+      .imgsec2 {
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-image: url("./images/resbgimg.png");
+      }
+
+      .imgsec4 {
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        background-image: url("./images/girlimage1.png");
+      }
+
+      .textbox {
+        padding: 0 20px;
+      }
+
+      .scrollingtext {
+        display: none;
+      }
+
+      .scrollingtext2 {
+        display: none;
+      }
+
+      .heading-text-res-section2 {
+        padding-bottom: 134px;
+        font-family: Adobe Caslon Pro;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 32.76px;
+        text-align: center;
+      }
+
+      .heading-text-bottom-res-section2 {
+        font-family: Helvetica Neue;
+        font-size: 14.99px;
+        font-weight: 700;
+        line-height: 13.64px;
+        letter-spacing: 0.11em;
+        text-align: center;
+      }
+
+      .scrollingtext-res-section2 {
+        display: flex;
+        flex-direction: column;
+        gap: 123px;
+        position: relative;
+        z-index: 9;
+        color: #ffffff;
+        padding-bottom: 45px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-right: 13px;
+        padding-left: 14px;
+      }
+
+      .heading-text2 {
+        display: none;
+      }
+
+      .btn {
+        max-width: 144px;
+        width: 100%;
+        display: block;
+        min-width: 144px;
+        text-align: center;
+        padding: 5px;
+      }
+
+      .staggerEffect {
+        flex-direction: column;
+      }
+
+      /* .section4inner {
+        position: sticky;
+        top: 0;
+        z-index: 0;
+      } */
+
+      .section4inner {
+        position: -webkit-sticky;
+        /* WebKit prefix for iOS support */
+        position: sticky;
+        top: 0;
+      }
+
+      .scrollingtext,
+      .scrollingtext2 {
+        justify-content: end;
+        height: 98vh;
+        margin: 0 auto;
+        gap: 40%;
+      }
+
+      .videoHeading span {
+        display: block;
+      }
+
+      .videoHeading {
+        padding: 13px 0;
+      }
+
+      .bgimageone {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .bgimagetwo {
+        background: url("./images/bgtowres.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .staggerEffect {
+        gap: 20px;
+      }
+
+      .gridd {
+        grid-template-columns: 0% 100%;
+        /* z-index: 10 !important; */
+      }
+
+      .rightside {
+        width: 100%;
+        /* transform: translateX(0); */
+      }
+
+      .heading-text,
+      .heading-text2 {
+        text-align: center;
+        font-size: 36px;
+        text-wrap: nowrap;
+      }
+
+      .heading-text-bottom,
+      .heading-text-bottom2 {
+        text-align: center;
+        font-size: 15px;
+      }
+
+      .maisonsec {
+        background-image: url("./images/resfooter.png");
+      }
+
+    }
+
+    @media screen and (max-width : 320px) {
+      .firstsectext {
+        transform: scale(0.8);
+      }
+
+      .textbox p {
+        padding-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="section">
+    <div class="imagebox">
+      <div class="bgimageone">
+      </div>
+      <div class="bgimagetwo">
+      </div>
+    </div>
+    <div
+      style="display: flex; justify-content: center; align-items: center; position:absolute ; top: 0; height: 100vh; width: 100%;">
+      <img src="./images/firstsectext.png" class="firstsectext" alt=" firstsectext">
+    </div>
+    <div class="logobox">
+      <img src="./images/bhenologo.png" alt="logo">
+    </div>
+    <div class="textbox">
+      <div style="height: 500px;"></div>
+      <p style="max-width: 400px; text-align: center;">Every considered detail comes together at our Maison – from
+        the tanneries to the thread manufacturers to the artisans constructing our leather objects to our
+        packaging experts – and this vast supply chain is enveloped into the Maison de behno family. </p>
+    </div>
+  </section>
+
+  <!-- section 1 ===================================== end -->
+
+  <!-- section 2 ===================================== start -->
+
+  <!-- <section>
+    <div class="section4">
+      <div class="section4inner">
+        <div class="section4left ">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="section4">
+      <div class="section4inner">
+        <div class="section4left ">
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section>
+    <div class="section4">
+      <div class="section4inner">
+        <div class="section4left imgsec2">
+          <div class="scrollingtext2">
+            <h1 class="heading-text2">The testament to taste.</h1>
+            <h1 class=" heading-text2 heading-text2-res">The testament to taste.</h1>
+            <h1 class="heading-text-bottom2">SHOP BEHNO SIGNATURES.</h1>
+          </div>
+        </div>
+      </div>
+      <div class="gridd">
+        <div></div>
+        <!-- style="position: relative ;z-index: 10" -->
+        <div>
+          <div style="height: fit-content">
+            <div class="scrollingtext-res-section2">
+              <h1 class="heading-text-res-section2">The testament to taste.</h1>
+              <h1 class="heading-text-bottom-res-section2">SHOP BEHNO SIGNATURES.</h1>
+            </div>
+          </div>
+          <div class="rightside imageContainer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- section 2 ===================================== end -->
+
+  <!-- section 3 ===================================== start -->
+
+  <section>
+    <h2 class="videoHeading"> <span>Explore the</span><span> Maison de behno.</span></h2>
+    <video class="video" width="100%" height="100%" poster="images/poster.png" controls>
+      <source src="movie.mp4" type="video/mp4" />
+      <source src="movie.ogg" type="video/ogg" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- section 3 ===================================== end -->
+
+  <!-- section 4 ===================================== start -->
+
+
+  <section>
+    <div class="section4">
+      <div class="section4inner">
+        <div class="section4left imgsec4">
+          <div class="scrollingtext2">
+            <h1 class="heading-text2">The testament to taste.</h1>
+            <h1 class=" heading-text2 heading-text2-res">The testament to taste.</h1>
+            <h1 class="heading-text-bottom2">SHOP BEHNO SIGNATURES.</h1>
+          </div>
+        </div>
+      </div>
+      <div class="gridd">
+        <div></div>
+        <div style="position: relative ;z-index: 10">
+          <div style="height: fit-content">
+            <div class="scrollingtext-res-section2">
+              <h1 class="heading-text-res-section2">The testament to taste.</h1>
+              <h1 class="heading-text-bottom-res-section2">SHOP BEHNO SIGNATURES.</h1>
+            </div>
+          </div>
+          <div class="rightside imageContainer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- section 4 ===================================== end -->
+
+  <!-- section 5=======================================start -->
+  <section class="footer">
+    <div class="maisonsec">
+      <div class="cantant">
+        <div class="footer-textcontainer">
+          <h1 id="text-anim">Explore leather luxury from the Maison.</h1>
+        </div>
+        <div class="staggerEffect">
+          <div class="animbtn">
+            <a class="btn" href="#">Metallics</a>
+          </div>
+          <div class="animbtn">
+            <a class="btn" href="#">Crossbody bags</a>
+          </div>
+          <div class="animbtn">
+            <a class="btn" href="#">Shoulders bags</a>
+          </div>
+          <div class="animbtn">
+            <a class="btn" href="#">Mini bags</a>
+          </div>
+          <div class="animbtn">
+            <a class="btn" href="#">Embellished</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- section 5=======================================end -->
+
+  <!-- gsap cdn============================ start -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- gsap cdn  ==============================end -->
+
+  <!-- gsap script =========================== start -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".imagebox",
+        start: "top 0%",
+        end: "bottom -100%",
+        pin: true,
+        pinSpacing: false,
+        scrub: true
+      }
+    }).
+      to(".imagebox", {
+        scale: 1.2
+      })
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".logobox",
+        start: "top  80%",
+        end: "bottom top",
+        pin: true,
+        pinSpacing: false,
+        scrub: true,
+      }
+    }).fromTo(".bgimagetwo", {
+      opacity: 0,
+      delay: 0.8
+    }, {
+      opacity: 1,
+      scale: 1.2
+    }, ">").fromTo(".bgimageone", {
+      opacity: 1,
+      delay: 0.8
+    }, {
+      opacity: 0,
+      scale: 1.2
+    }, ">")
+
+
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".textbox",
+        start: "20% bottom",
+        end: "20% bottom",
+        scrub: true,
+        pin: true,
+        pinSpacing: false,
+      }
+    })
+
+    // Function to create GSAP scroll animation for a given section
+    function animateSection(section) {
+      ScrollTrigger.matchMedia({
+        "(min-width: 769px)": function () {
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: section.querySelector('.section4inner'),
+              scrub: 2,
+              start: "top top",
+              end: "100% center",
+            },
+          })
+            .to(section.querySelector(".section4inner"), {
+              position: "sticky",
+              top: 0,
+            }, "b")
+            .to(section.querySelector(".scrollingtext2"), {
+              margin: "0",
+              duration: 1,
+            }, "b");
+        },
+        "(max-width: 768px)": function () {
+          console.log("this is on Mobile");
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: section.querySelector('.section4left'),
+              start: "20% 20%",
+              end: "bottom -100%",
+              scrub: true,
+            },
+          })
+            .fromTo(section.querySelector('.section4left'), {
+              backgroundSize: "150%",
+            }, {
+              backgroundSize: "100%",
+            });
+        },
+        "all": function () {
+          ScrollTrigger.refresh();
+        },
+      });
+    }
+
+    // Apply animation to each section
+    document.querySelectorAll(".section4").forEach((section) => {
+      animateSection(section);
+    });
+
+
+    gsap.from(".animbtn", {
+      y: 100,
+      duration: 0.5,
+      stagger: 0.2,
+      ease: "sine.out",
+      scrollTrigger: {
+        trigger: ".staggerEffect",
+        start: "top 80%",
+        end: "bottom 100%",
+        scrub: 2,
+      },
+    });
+
+    gsap.fromTo(
+      ".footer-textcontainer div",
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: "sine.out",
+        scrollTrigger: {
+          trigger: ".footer-textcontainer",
+          start: "top 80%",
+          end: "bottom 100%",
+          scrub: 3,
+        },
+        opacity: 1,
+      }
+    );
+
+    // smouth scroll effect 
+
+    gsap.to(".textani", {
+      duration: 2,
+      text: "thank you for waiting",
+      delay: 1,
+    });
+
+    // dynamic image
+    const imageContainers = document.querySelectorAll(".imageContainer");
+
+    // Array of image sources
+    const images = [
+      "./images/productimage2.png",
+      "./images/productimage1.png",
+      "./images/productimage2.png",
+      "./images/productimage2.png",
+      "./images/productimage2.png",
+      "./images/productimage3.png",
+      "./images/productimage2.png",
+      "./images/productimage2.png",
+    ];
+
+    imageContainers.forEach((imageContainer) => {
+      images.map((src) => {
+        const div = document.createElement("div");
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "image";
+        div.appendChild(img);
+        imageContainer.appendChild(div);
+      });
+    });
+  </script>
+
+  <!-- gsap script ==================== end  -->
+</body>
+
+</html>
