@@ -1,51 +1,380 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Behno Takat</title>
+    <title>Takat Banner</title>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .takatbanner {
+            background-image: url("/5432477c3be9208a0d4b49a9c4c99c6f%201%20%286%29.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top;
+            position: relative;
+        }
+
+        .takatsection1,
+        .takatsection2,
+        .takatsection4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .takatsection1 {
+            height: 100vh;
+        }
+
+        .takatsection2,
+        .takatsection4 {
+            height: 50vh;
+        }
+
+        .takatsection3,
+        .sec5 {
+            height: 50vh;
+            text-align: center;
+        }
+
+        .takattext {
+            max-width: 468px;
+            margin: 0 auto;
+            color: white;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .behnoyork {
+            max-width: 130px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .takattext {
+                font-size: 0.9rem;
+            }
+
+            .behnoyork {
+                max-width: 100px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            #takaticon {
+                max-width: 70px;
+            }
+
+            #takatlogo {
+                max-width: 200px;
+            }
+
+            .behnoyork {
+                max-width: 70px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .takattext {
+                font-size: 0.8rem;
+            }
+
+            .behnoyork {
+                max-width: 80px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            #takaticon {
+                max-width: 50px;
+            }
+
+            #takatlogo {
+                max-width: 150px;
+            }
+
+            .behnoyork {
+                max-width: 50px;
+            }
+        }
+    </style>
 </head>
 
-
-<style>
-    .takatbanner {
-        background-image: url("bannerimage.jpeg");
-        background-repeat: no-repeat;
-        /* background-size: contain; */
-        
-    }
-</style>
-
-
 <body>
-
     <div class="takatbanner">
-
+        <div class="takatsection1">
+            <img id="takaticon" src="./takatlogo.png" alt="Takat Logo">
+        </div>
+        <div class="takatsection2">
+            <img id="takatlogo" src="./takatlogo2.png" alt="Takat Logo 2">
+        </div>
+        <div class="takatsection3">
+            <p class="takattext">TĀKAT by behno New York is more than a collection—it's a celebration of the artisans
+                whose passion and skill breathe life into every piece. Each piece carries the soul of timeless artistry
+                and the promise of making luxury truly meaningful.</p>
+        </div>
+        <div class="takatsection4">
+            <img class="behnoyork" src="/behnoyork.png" alt="Behnoyork">
+        </div>
+        <div class="sec5"></div>
     </div>
 
+    <div style="background-color: red; height: 100vh;"></div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+    <script>
+        const lenis = new Lenis({
+            duration: 3,
+            easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // Less than 400px screen
+let mm1 = gsap.matchMedia();
+mm1.add("(max-width: 399px)", () => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection1",
+            start: "50% 50%",
+            end: "bottom 50%",
+            scrub: true,
+        }
+    }).to("#takaticon", { x: -70 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection1",
+            start: "0% 0%",
+            end: "bottom -100%",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+        }
+    });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection2",
+            start: "0% 100%",
+            end: "50% 50%",
+            scrub: true,
+        }
+    }).to("#takatlogo", { x: 50 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection2",
+            start: "50% 50%",
+            end: "50% 30%",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+        }
+    });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection3",
+            start: "0% 60%",
+            end: "70% 70%",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+        }
+    }).to(".takattext", { opacity: 0 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection4",
+            start: "0% 100%",
+            end: "50% 100%",
+            scrub: true,
+        }
+    }).to("#takaticon", { x: 0 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection4",
+            start: "42% 55%",
+            end: "0% 0%",
+            pin: true,
+            pinSpacing: false,
+            scrub: true,
+        }
+    });
+});
+
+// 400px and above, up to 599px
+let mm2 = gsap.matchMedia();
+mm2.add("(min-width: 400px) and (max-width: 599px)", () => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection1",
+            start: "50% 50%",
+            end: "bottom 50%",
+            scrub: true,
+        }
+    }).to("#takaticon", { x: -80 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection1",
+            start: "0% 0%",
+            end: "bottom -100%",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+        }
+    });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection2",
+            start: "0% 100%",
+            end: "50% 50%",
+            scrub: true,
+        }
+    }).to("#takatlogo", { x: 70 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection2",
+            start: "50% 50%",
+            end: "50% 30%",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+        }
+    });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection3",
+            start: "0% 60%",
+            end: "70% 70%",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+        }
+    }).to(".takattext", { opacity: 0 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection4",
+            start: "0% 100%",
+            end: "50% 100%",
+            scrub: true,
+        }
+    }).to("#takaticon", { x: 0 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection4",
+            start: "42% 55%",
+            end: "0% 0%",
+            pin: true,
+            pinSpacing: false,
+            scrub: true,
+        }
+    });
+});
+
+// 600px and above
+let mm3 = gsap.matchMedia();
+mm3.add("(min-width: 600px)", () => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection1",
+            start: "50% 50%",
+            end: "bottom 50%",
+            scrub: true,
+        }
+    }).to("#takaticon", { x: -200 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection1",
+            start: "0% 0%",
+            end: "bottom -100%",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+        }
+    });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection2",
+            start: "0% 100%",
+            end: "50% 50%",
+            scrub: true,
+        }
+    }).to("#takatlogo", { x: 100 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection2",
+            start: "50% 50%",
+            end: "50% 30%",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+        }
+    });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection3",
+            start: "0% 70%",
+            end: "70% 70%",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+        }
+    }).to(".takattext", { opacity: 0 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection4",
+            start: "0% 100%",
+            end: "50% 100%",
+            scrub: true,
+        }
+    }).to("#takaticon", { x: 0 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".takatsection4",
+            start: "42% 60%",
+            end: "0% 0%",
+            pin: true,
+            pinSpacing: false,
+            scrub: true,
+        }
+    });
+});
+
+    </script>
 </body>
-
-
-<!-- gsap cdn============================ start -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script>
-    gsap.registerPlugin(ScrollTrigger);
-
-
-
-
-
-
-
-
-</script>
 
 </html>

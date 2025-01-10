@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>takatbanner</title>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .takatbanner {
+            background-image: url("/5432477c3be9208a0d4b49a9c4c99c6f\ 1\ \(6\).png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top;
+            position: relative;
+        }
+
+        .takatsection1,
+        .takatsection2,
+        .takatsection4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .takatsection1 {
+            height: 100vh;
+        }
+
+        .takatsection2,
+        .takatsection4 {
+            height: 50vh;
+        }
+
+        .takatsection3,
+        .sec5 {
+            height: 50vh;
+            text-align: center;
+        }
+
+        .takattext {
+            max-width: 468px;
+            margin: 0 auto;
+            color: white;
+            line-height: 125%;
+        }
+
+
+        .behnoyork {
+            max-width: 130px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="takatbanner">
+        <div class="takatsection1">
+            <img id="takaticon" src="./takatlogo.png" alt="takatlogo">
+        </div>
+        <div class="takatsection2">
+            <img id="takatlogo" src="./takatlogo2.png" alt="takatlogo2">
+        </div>
+        <div class="takatsection3">
+            <p class="takattext">TĀKAT by behno New York is more than a collection—it's a celebration of the artisans
+                whose passion and skill breathe life into every piece. Each piece carries the soul of timeless artistry
+                and the promise of making luxury truly meaningful.</p>
+        </div>
+        <div class="takatsection4">
+            <img class="behnoyork" src="/behnoyork.png" alt="">
+        </div>
+        <div class="sec5"></div>
+    </div>
+
+    <div style="background-color: red; height: 100vh;">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+    <script>
+        const lenis = new Lenis({
+            duration: 3,
+            easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        let mm = gsap.matchMedia();
+
+        // mobile view
+
+        mm.add("(max-width:500px)",()=>{
+
+        })
+
+        // tab view
+
+        mm.add("(min-width: 500px)", () => {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection1",
+                    start: "50% 50%",
+                    end: "bottom 50%",
+                    scrub: true,
+                }
+            }).to("#takaticon", { x: -200 });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection1",
+                    start: "0% 0%",
+                    end: "bottom -100%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                }
+            });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection2",
+                    start: "0% 100%",
+                    end: "50% 50%",
+                    scrub: true,
+                }
+            }).to("#takatlogo", { x: 100 });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection2",
+                    start: "50% 50%",
+                    end: "50% 30%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false
+                }
+            });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection3",
+                    start: "0% 70%",
+                    end: "70% 70%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false
+                }
+            }).to(".takattext", { opacity: 0 });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection4",
+                    start: "0% 100%",
+                    end: "50% 100%",
+                    scrub: true,
+                }
+            }).to("#takaticon", { x: 0 });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection4",
+                    start: "42% 60%",
+                    end: "0% 0%",
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
