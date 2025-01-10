@@ -41,7 +41,7 @@
 
         .takatsection2,
         .takatsection4 {
-            height: 80vh;
+            height: 50vh;
         }
 
         .takatsection3,
@@ -61,7 +61,7 @@
         .behnoyork {
             max-width: 130px;
             width: 100%;
-            /* padding-top: 40px; */
+            padding-top: 50px;
         }
 
         @media (max-width: 768px) {
@@ -130,7 +130,7 @@
         <div class="takatsection4">
             <img class="behnoyork" src="./behnoyork.png" alt="Behnoyork">
         </div>
-        <!-- <div class="sec5"></div> -->
+        <div class="sec5"></div>
     </div>
 
     <div style="background-color: black; height: 100vh;"></div>
@@ -152,8 +152,8 @@
         requestAnimationFrame(raf);
 
         // Less than 400px screen
-let mm1 = gsap.matchMedia();
-mm1.add("(max-width: 399px)", () => {
+let mm = gsap.matchMedia();
+mm.add("(max-width: 399px)", () => {
     gsap.timeline({
         scrollTrigger: {
             trigger: ".takatsection1",
@@ -227,8 +227,7 @@ mm1.add("(max-width: 399px)", () => {
 });
 
 // 400px and above, up to 599px
-let mm2 = gsap.matchMedia();
-mm2.add("(min-width: 400px) and (max-width: 599px)", () => {
+mm.add("(min-width: 400px) and (max-width: 599px)", () => {
     gsap.timeline({
         scrollTrigger: {
             trigger: ".takatsection1",
@@ -302,8 +301,7 @@ mm2.add("(min-width: 400px) and (max-width: 599px)", () => {
 });
 
 // 600px and above
-let mm3 = gsap.matchMedia();
-mm3.add("(min-width: 600px)", () => {
+mm.add("(min-width: 600px)", () => {
     gsap.timeline({
         scrollTrigger: {
             trigger: ".takatsection1",
@@ -317,7 +315,7 @@ mm3.add("(min-width: 600px)", () => {
         scrollTrigger: {
             trigger: ".takatsection1",
             start: "0% 0%",
-            end: "bottom -105%",
+            end: "bottom -100%",
             scrub: true,
             pin: true,
             pinSpacing: false,
@@ -367,9 +365,8 @@ mm3.add("(min-width: 600px)", () => {
     gsap.timeline({
         scrollTrigger: {
             trigger: ".takatsection4",
-            start: "0% 0%",
-            end: "0% 90%",
-            marker:true,
+            start: "42% 60%",
+            end: "0% 0%",
             pin: true,
             pinSpacing: false,
             scrub: true,
