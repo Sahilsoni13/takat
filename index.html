@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +24,7 @@
             background-size: cover;
             background-position: top;
             position: relative;
+            overflow: hidden;
         }
 
         .takatsection1,
@@ -64,6 +64,14 @@
             padding-top: 50px;
         }
 
+        .resbg {
+       display: none;
+        }
+
+        .takatsection1 {
+            position: relative;
+        }
+
         @media (max-width: 768px) {
             .takattext {
                 font-size: 0.9rem;
@@ -72,6 +80,20 @@
             .behnoyork {
                 max-width: 100px;
             }
+            .takatbanner {
+                background-image: none;
+            }
+            .resbg {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            display: block;
+            width: 100%;
+            height: 101%;
+        }
         }
 
         @media screen and (max-width:600px) {
@@ -86,6 +108,9 @@
             .behnoyork {
                 max-width: 70px;
             }
+
+
+
         }
 
         @media (max-width: 500px) {
@@ -118,6 +143,7 @@
     <div class="takatbanner">
         <div class="takatsection1">
             <img id="takaticon" src="./takatlogo.png" alt="Takat Logo">
+            <img class="resbg" src="./takatBannerMob1 (1).png" alt="">
         </div>
         <div class="takatsection2">
             <img id="takatlogo" src="./takatlogo2.png" alt="Takat Logo 2">
@@ -132,6 +158,7 @@
         </div>
         <div class="sec5"></div>
     </div>
+    <div style="height: 200vh; background: #000;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
@@ -149,229 +176,244 @@
         requestAnimationFrame(raf);
 
         // Less than 400px screen
-let mm1 = gsap.matchMedia();
-mm1.add("(max-width: 399px)", () => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection1",
-            start: "50% 50%",
-            end: "bottom 50%",
-            scrub: true,
-        }
-    }).to("#takaticon", { x: -70 });
+        let mm1 = gsap.matchMedia();
+        mm1.add("(min-width: 0px) and (max-width: 768px)", () => {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatbanner",
+                    start: "0% 0%",
+                    end: "bottom 100%",
+                    scrub: true,
+                }
+            }).to(".resbg", {
+                scale: '1.5'
+            })
+        })
+        mm1.add("(max-width: 399px)", () => {
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection1",
-            start: "0% 0%",
-            end: "bottom -100%",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-        }
-    });
+    
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection2",
-            start: "0% 100%",
-            end: "50% 50%",
-            scrub: true,
-        }
-    }).to("#takatlogo", { x: 50 });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection1",
+                    start: "50% 50%",
+                    end: "bottom 50%",
+                    scrub: true,
+                }
+            }).to("#takaticon", { x: -70 });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection2",
-            start: "50% 50%",
-            end: "50% 30%",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-        }
-    });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection1",
+                    start: "0% 0%",
+                    end: "bottom -100%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                }
+            });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection3",
-            start: "0% 60%",
-            end: "70% 70%",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-        }
-    }).to(".takattext", { opacity: 0 });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection2",
+                    start: "0% 100%",
+                    end: "50% 50%",
+                    scrub: true,
+                }
+            }).to("#takatlogo", { x: 50 });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection4",
-            start: "0% 100%",
-            end: "50% 100%",
-            scrub: true,
-        }
-    }).to("#takaticon", { x: 0 });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection2",
+                    start: "50% 50%",
+                    end: "50% 30%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                }
+            });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection4",
-            start: "42% 55%",
-            end: "0% 0%",
-            pin: true,
-            pinSpacing: false,
-            scrub: true,
-        }
-    });
-});
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection3",
+                    start: "0% 60%",
+                    end: "70% 70%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                }
+            }).to(".takattext", { opacity: 0 });
 
-// 400px and above, up to 599px
-let mm2 = gsap.matchMedia();
-mm2.add("(min-width: 400px) and (max-width: 599px)", () => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection1",
-            start: "50% 50%",
-            end: "bottom 50%",
-            scrub: true,
-        }
-    }).to("#takaticon", { x: -80 });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection4",
+                    start: "0% 100%",
+                    end: "50% 100%",
+                    scrub: true,
+                }
+            }).to("#takaticon", { x: 0 });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection1",
-            start: "0% 0%",
-            end: "bottom -100%",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-        }
-    });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection4",
+                    start: "42% 55%",
+                    end: "0% 0%",
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                }
+            });
+        });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection2",
-            start: "0% 100%",
-            end: "50% 50%",
-            scrub: true,
-        }
-    }).to("#takatlogo", { x: 70 });
+        // 400px and above, up to 599px
+        let mm2 = gsap.matchMedia();
+        mm2.add("(min-width: 400px) and (max-width: 599px)", () => {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection1",
+                    start: "50% 50%",
+                    end: "bottom 50%",
+                    scrub: true,
+                }
+            }).to("#takaticon", { x: -80 });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection2",
-            start: "50% 50%",
-            end: "50% 30%",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-        }
-    });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection1",
+                    start: "0% 0%",
+                    end: "bottom -100%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                }
+            });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection3",
-            start: "0% 60%",
-            end: "70% 70%",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-        }
-    }).to(".takattext", { opacity: 0 });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection2",
+                    start: "0% 100%",
+                    end: "50% 50%",
+                    scrub: true,
+                }
+            }).to("#takatlogo", { x: 70 });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection4",
-            start: "0% 100%",
-            end: "50% 100%",
-            scrub: true,
-        }
-    }).to("#takaticon", { x: 0 });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection2",
+                    start: "50% 50%",
+                    end: "50% 30%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                }
+            });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection4",
-            start: "42% 55%",
-            end: "0% 0%",
-            pin: true,
-            pinSpacing: false,
-            scrub: true,
-        }
-    });
-});
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection3",
+                    start: "0% 60%",
+                    end: "70% 70%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                }
+            }).to(".takattext", { opacity: 0 });
 
-// 600px and above
-let mm3 = gsap.matchMedia();
-mm3.add("(min-width: 600px)", () => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection1",
-            start: "50% 50%",
-            end: "bottom 50%",
-            scrub: true,
-        }
-    }).to("#takaticon", { x: -200 });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection4",
+                    start: "0% 100%",
+                    end: "50% 100%",
+                    scrub: true,
+                }
+            }).to("#takaticon", { x: 0 });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection1",
-            start: "0% 0%",
-            end: "bottom -100%",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-        }
-    });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection4",
+                    start: "42% 55%",
+                    end: "0% 0%",
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                }
+            });
+        });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection2",
-            start: "0% 100%",
-            end: "50% 50%",
-            scrub: true,
-        }
-    }).to("#takatlogo", { x: 100 });
+        // 600px and above
+        let mm3 = gsap.matchMedia();
+        mm3.add("(min-width: 600px)", () => {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection1",
+                    start: "50% 50%",
+                    end: "bottom 50%",
+                    scrub: true,
+                }
+            }).to("#takaticon", { x: -200 });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection2",
-            start: "50% 50%",
-            end: "50% 30%",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-        }
-    });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection1",
+                    start: "0% 0%",
+                    end: "bottom -100%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                }
+            });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection3",
-            start: "0% 70%",
-            end: "70% 70%",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-        }
-    }).to(".takattext", { opacity: 0 });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection2",
+                    start: "0% 100%",
+                    end: "50% 50%",
+                    scrub: true,
+                }
+            }).to("#takatlogo", { x: 100 });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection4",
-            start: "0% 100%",
-            end: "50% 100%",
-            scrub: true,
-        }
-    }).to("#takaticon", { x: 0 });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection2",
+                    start: "50% 50%",
+                    end: "50% 30%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                }
+            });
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".takatsection4",
-            start: "42% 60%",
-            end: "0% 0%",
-            pin: true,
-            pinSpacing: false,
-            scrub: true,
-        }
-    });
-});
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection3",
+                    start: "0% 70%",
+                    end: "70% 70%",
+                    scrub: true,
+                    pin: true,
+                    pinSpacing: false,
+                }
+            }).to(".takattext", { opacity: 0 });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection4",
+                    start: "0% 100%",
+                    end: "50% 100%",
+                    scrub: true,
+                }
+            }).to("#takaticon", { x: 0 });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".takatsection4",
+                    start: "42% 60%",
+                    end: "0% 0%",
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                }
+            });
+        });
 
     </script>
 </body>
